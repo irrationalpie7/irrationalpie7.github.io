@@ -1,0 +1,461 @@
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Half Midnight In The Arse-Crack Of Winter</title>
+    <meta name="description" content="Animation for Half Midnight In The Arse-Crack Of Winter, a Sherlock fic">
+
+    <link rel="stylesheet" href="./animation.css">
+</head>
+
+<body class="darkmode">
+    <div id="top-container">
+        <div style="display: flex;">
+            <div>
+                <h1>Half Midnight In The Arse-Crack Of Winter</h1>
+            </div>
+            <div style="flex-grow: 1;"></div>
+            <div>
+                <button id="lightdark-btn">Switch to <span id="dark-light-current">Light</span> Mode</button>
+            </div>
+        </div>
+
+        <div id="meta-info">
+            <button class="accordion">Info, Credits, and How to Use</button>
+            <div class="panel">
+                <p>Note: This site does not work in Internet Explorer. Please check out the <a href="https://archiveofourown.org/works/4872139">text</a> and
+                  <a href="https://archiveofourown.org/works/28493355">audio</a> on Ao3 if you cannot use another browser.
+                </p>
+                <h2>What is this?</h2>
+                <p>This animation is based on a fanfic/podfic of the same name. You can find the original text <a
+                        href="https://archiveofourown.org/works/4872139">on Ao3</a>.</p>
+
+                <h2>Credits</h2>
+                <p>Written by
+                    
+                        <a href="https://archiveofourown.org/users/faerymorstan/pseuds/faerymorstan">faerymorstan</a>.
+                    
+                </p>
+                <p>Read by:
+                    <ul>
+                        
+                        <li><a href="https://archiveofourown.org/users/irrationalpie">irrationalpie</a></li>
+                        
+                    </ul>
+                </p>
+                <p>Animation by:
+                    <ul>
+                        
+                        <li><a href="https://archiveofourown.org/users/irrationalpie">irrationalpie</a></li>
+                        
+                    </ul>
+                </p>
+                <p>
+                    <a href="https://github.com/irrationalpie7/irrationalpie7.github.io">Source code available on Github</a>
+                    courtesy of <a href="https://archiveofourown.org/users/irrationalpie">irrationalpie</a>, drawing heavily
+                    from <a href="https://github.com/justoakleaf/kay2-has-entered-chat">this repository</a>, courtesy of
+                    <a href="https://archiveofourown.org/users/oakleaf/pseuds/oakleaf">oakleaf</a>.
+                </p>
+                <p></p>
+                
+                <p>
+                    <i>If you enjoyed this animation, please <a href="https://archiveofourown.org/works/28493355">let the creator(s) know on Ao3</a>!</i>
+                </p>
+                <h2>How to use this animation</h2>
+                <p>
+                    This animation is (largely) synced up to the audio. It is started when the play button is pressed on
+                    the audio.
+                </p>
+                <p>
+                    Please enable JavaScript to view the animation.
+                </p>
+                <p>
+                    For the best experience, minimise this panel to maximise the animation area.
+                </p>
+                <p>
+                    If you jump around in or pause the audio, the animation will automatically move to the right place.
+                    Due to the nature of the timing, you may notice a slight misalignment between the text and the
+                    audio.
+                </p>
+                <p>
+                    The animation does not automatically realign if you seek in the audio with the arrow keys or if the
+                    audio time is updated in the console.
+                </p>
+                <p>
+                    If you experience any misalignment between the text and the audio, a pause and unpause should
+                    probably fix it.
+                </p>
+            </div>
+        </div>
+        <!-- Show the entire animation and the audio controls on the screen -->
+        <div id="viewport">
+            <div id="controls">
+                <audio controls id="audio">
+                    <source src="Biscuitverse6.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- div containing the entire app -->
+            <div id="k2-enters-chat" class="k2-enters-chat texting-theme">
+                <div class="app-container" id="credits">
+                    <div class="nonpov">
+                        [INFO] Click play to start the animation.<br>
+                        &gt;&gt;<br>
+                        <div>&gt;&gt; <span class="cursor"></span></div>
+                    </div>
+                </div>
+                <div class="app-container" id="droidchat">
+                    <div id="chat-title">Half Midnight In The Arse-Crack Of Winter</div>
+
+                    <!-- div containing DroidChat -->
+                    <div class="chatbox-container" id="chatbox-container">
+                        <div class="chatbox" id="chatbox">
+                            <div class="message-container" style="flex-grow: 1;" data-class="static" data-timing="0">
+                                <div class="message-space"></div>
+                            </div>
+                            <div class="message-container" data-class="static" data-timing="0">
+                                <div class="message-space">
+                                    
+                                    <br>
+                                </div>
+                            </div>
+                            
+                            
+                                <div id="msg0" class="message-container hidden" data-class="switch" data-timing="0" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Half Midnight In The Arse-Crack Of Winter</div></div></div>
+
+                            
+                                <div id="msg1" class="message-container hidden" data-class="ignore" data-timing="3.086" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov"></div></div></div>
+
+                            
+                                <div id="msg2" class="message-container" data-class="DCctrl" data-timing="3.174" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Half Midnight In The Arse-Crack Of Winter</div></div></div>
+
+                            
+                                <div id="msg3" class="message-container" data-class="DCctrl" data-timing="2.32" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">written by faerymorstan</div></div></div>
+
+                            
+                                <div id="msg4" class="message-container" data-class="DCctrl" data-timing="2.74" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">read by irrationalpie</div></div></div>
+
+                            
+                                <div id="msg5" class="message-container" data-class="DCctrl" data-timing="5.0" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Relationship: Sherlock Holmes/Mary Morstan/John Watson</div></div></div>
+
+                            
+                                <div id="msg6" class="message-container" data-class="DCctrl" data-timing="3.19" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Part 6 of the Buiscuitverse series</div></div></div>
+
+                            
+                                <div id="msg7" class="message-container" data-class="DCctrl" data-timing="1.24" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Summary:</div></div></div>
+
+                            
+                                <div id="msg8" class="message-container" data-class="DCctrl" data-timing="2.58" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">A brief interlude in a roller skating bar.</div></div></div>
+
+                            
+                                <div id="msg9" class="message-container" data-class="DCctrl" data-timing="1.022031" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Yknow.</div></div></div>
+
+                            
+                                <div id="msg10" class="message-container" data-class="DCctrl" data-timing="5.615" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Like ya do.</div></div></div>
+
+                            
+                                <div id="msg11" class="message-container hidden" data-class="switch" data-timing="2.802557" data-type-start="0" data-prompt="" data-user="" width="100%"><div class="message-space"><div class="nonpov">Mary Morstan Watson</div></div></div>
+
+                            
+                                <div id="msg13" class="message-container" data-class="msg" data-timing="1.44" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Short Wife!</div></div></div>
+
+                            
+                                <div id="msg14" class="message-container" data-class="msg" data-timing="4.02" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Have I mentioned lately that you are beautiful and lovely and</div></div></div>
+
+                            
+                                <div id="msg15" class="message-container" data-class="msg" data-timing="5.33" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Hold on John is making me look at some sort of writer website on his mobile</div></div></div>
+
+                            
+                                <div id="msg17" class="message-container" data-class="msg" data-timing="2.65" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Oh Lord.</div></div></div>
+
+                            
+                                <div id="msg19" class="message-container" data-class="msg" data-timing="2.42" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">... Radiant?</div></div></div>
+
+                            
+                                <div id="msg20" class="message-container" data-class="msg" data-timing="3.44" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">This website is rubbish. You aren&#x27;t radiant at all.</div></div></div>
+
+                            
+                                <div id="msg21" class="message-container" data-class="msg" data-timing="5.77" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">In fact if you began to emit light I would conclude that those idiots at Baskerville had got hold of you.</div></div></div>
+
+                            
+                                <div id="msg22" class="message-container" data-class="msg" data-timing="1.75" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Then I would have to kill them.</div></div></div>
+
+                            
+                                <div id="msg23" class="message-container" data-class="msg" data-timing="3.92" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">And then Mycroft would have to fill out all sorts of paperwork.</div></div></div>
+
+                            
+                                <div id="msg24" class="message-container" data-class="msg" data-timing="2.01" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">He *hates* paperwork.</div></div></div>
+
+                            
+                                <div id="msg25" class="message-container" data-class="msg" data-timing="1.57" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Hmm.</div></div></div>
+
+                            
+                                <div id="msg26" class="message-container" data-class="msg" data-timing="4.34" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Maybe I should kill people more often.</div></div></div>
+
+                            
+                                <div id="msg28" class="message-container" data-class="msg" data-timing="2.78" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Nope, stop talking, you&#x27;re done.</div></div></div>
+
+                            
+                                <div id="msg29" class="message-container" data-class="msg" data-timing="3.24" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">What d&#x27;you want?</div></div></div>
+
+                            
+                                <div id="msg31" class="message-container" data-class="msg" data-timing="2.19" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Oh, nothing, nothing.</div></div></div>
+
+                            
+                                <div id="msg32" class="message-container" data-class="msg" data-timing="7.44" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Just for you to swing by Vauxhall and convince quite a lot of drunk people on roller skates that I am in fact married to a woman.</div></div></div>
+
+                            
+                                <div id="msg33" class="message-container" data-class="msg" data-timing="2.89" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Who is in fact carrying my child.</div></div></div>
+
+                            
+                                <div id="msg34" class="message-container" data-class="msg" data-timing="7.31" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Who did in fact end up in said woman by the, um, usual method.</div></div></div>
+
+                            
+                                <div id="msg36" class="message-container" data-class="msg" data-timing="1.5499999999999998" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Wow.</div></div></div>
+
+                            
+                                <div id="msg37" class="message-container" data-class="msg" data-timing="3.42" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">What an appalling offer.</div></div></div>
+
+                            
+                                <div id="msg39" class="message-container" data-class="msg" data-timing="1.6" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Did you do a John?</div></div></div>
+
+                            
+                                <div id="msg40" class="message-container" data-class="msg" data-timing="6.1" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Surely you meant &quot;appealing&quot;.</div></div></div>
+
+                            
+                                <div id="msg42" class="message-container" data-class="msg" data-timing="4.2" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">William Sherlock Scott Holmes</div></div></div>
+
+                            
+                                <div id="msg44" class="message-container" data-class="msg" data-timing="2.44" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Shit.</div></div></div>
+
+                            
+                                <div id="msg46" class="message-container" data-class="msg" data-timing="2.10856" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">It is half midnight.</div></div></div>
+
+                            
+                                <div id="msg47" class="message-container" data-class="msg" data-timing="2.27144" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">In the arse-crack of winter.</div></div></div>
+
+                            
+                                <div id="msg48" class="message-container" data-class="msg" data-timing="7.0" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">I have only just managed to put down our thirteen-month-old son without his waking up and screaming for me.</div></div></div>
+
+                            
+                                <div id="msg49" class="message-container" data-class="msg" data-timing="3.34" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">I have been trying to put him down since eight.</div></div></div>
+
+                            
+                                <div id="msg50" class="message-container" data-class="msg" data-timing="7.91" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">I am thirty-four weeks pregnant with a stupidly tall baby because I just *had* to reproduce with her stupidly tall father.</div></div></div>
+
+                            
+                                <div id="msg51" class="message-container" data-class="msg" data-timing="6.97" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Is that enough clay, or do you need more so you can make enough bricks for me to beat some sense into you?</div></div></div>
+
+                            
+                                <div id="msg53" class="message-container" data-class="msg" data-timing="1.7300710000000001" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">No, no, thank you.</div></div></div>
+
+                            
+                                <div id="msg54" class="message-container" data-class="msg" data-timing="1.729929" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">I&#x27;m feeling quite sensible.</div></div></div>
+
+                            
+                                <div id="msg55" class="message-container" data-class="msg" data-timing="2.6100000000000003" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">And beaten.</div></div></div>
+
+                            
+                                <div id="msg57" class="message-container" data-class="msg" data-timing="3.69" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Good.</div></div></div>
+
+                            
+                                <div id="msg59" class="message-container" data-class="msg" data-timing="2.26" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Sorry.</div></div></div>
+
+                            
+                                <div id="msg60" class="message-container" data-class="msg" data-timing="3.6" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">They were laughing at me.</div></div></div>
+
+                            
+                                <div id="msg62" class="message-container" data-class="msg" data-timing="4.35" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">&quot;They&quot;? Who&#x27;s &quot;they&quot;?</div></div></div>
+
+                            
+                                <div id="msg64" class="message-container" data-class="msg" data-timing="3.0" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">The drunk people on roller skates.</div></div></div>
+
+                            
+                                <div id="msg65" class="message-container" data-class="msg" data-timing="7.874375" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">John and I are at this awful bar because one of our suspects is a bartender here and I wanted to observe him without being observed</div></div></div>
+
+                            
+                                <div id="msg66" class="message-container" data-class="msg" data-timing="11.435625" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">so I was pretending to be drunk and was actually on roller skates and one of the drunk people said I looked like a spastic giraffe and in my head I was very clever and made a cutting remark about his hairline</div></div></div>
+
+                            
+                                <div id="msg67" class="message-container" data-class="msg" data-timing="11.38" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">but in my mouth I shouted a lot about how at least I had a fucking hot and very pregnant wife and then the drunk people laughed and I rolled into the bathroom and cried in a stall like a normal person.</div></div></div>
+
+                            
+                                <div id="msg68" class="message-container" data-class="msg" data-timing="16.03" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">John found me eventually and I asked if he would help me figure out how to tell you you were beautiful so he sat in the stall next to me and passed his phone under the wall with the writer website and I gave it back but he&#x27;s still waiting for me.</div></div></div>
+
+                            
+                                <div id="msg70" class="message-container" data-class="msg" data-timing="1.7799999999999998" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Wait wait wait.</div></div></div>
+
+                            
+                                <div id="msg71" class="message-container" data-class="msg" data-timing="3.72" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Does John know why you were crying?</div></div></div>
+
+                            
+                                <div id="msg73" class="message-container" data-class="msg" data-timing="1.65" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">No.</div></div></div>
+
+                            
+                                <div id="msg74" class="message-container" data-class="msg" data-timing="3.03" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Can&#x27;t tell him.</div></div></div>
+
+                            
+                                <div id="msg76" class="message-container" data-class="msg" data-timing="3.95" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">He doesn&#x27;t know what that man said to you?</div></div></div>
+
+                            
+                                <div id="msg78" class="message-container" data-class="msg" data-timing="3.16" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Nope.</div></div></div>
+
+                            
+                                <div id="msg80" class="message-container" data-class="msg" data-timing="5.24" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Is it all right if I tell him?</div></div></div>
+
+                            
+                                <div id="msg81" class="message-container" data-class="msg" data-timing="3.84" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Sherlock?</div></div></div>
+
+                            
+                                <div id="msg83" class="message-container" data-class="msg" data-timing="3.95" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">what if he leaves</div></div></div>
+
+                            
+                                <div id="msg85" class="message-container" data-class="msg" data-timing="2.97" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">What if who leaves?</div></div></div>
+
+                            
+                                <div id="msg87" class="message-container" data-class="msg" data-timing="3.02" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">john</div></div></div>
+
+                            
+                                <div id="msg89" class="message-container" data-class="msg" data-timing="1.6044450000000001" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">What, the bathroom?</div></div></div>
+
+                            
+                                <div id="msg90" class="message-container" data-class="msg" data-timing="1.654048" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">He&#x27;ll wait for you somewhere else.</div></div></div>
+
+                            
+                                <div id="msg91" class="message-container" data-class="msg" data-timing="2.4815069999999997" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Promise.</div></div></div>
+
+                            
+                                <div id="msg93" class="message-container" data-class="msg" data-timing="3.3" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">no</div></div></div>
+
+                            
+                                <div id="msg95" class="message-container" data-class="msg" data-timing="3.54" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">?</div></div></div>
+
+                            
+                                <div id="msg97" class="message-container" data-class="msg" data-timing="4.34" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">what if he *leaves* leaves</div></div></div>
+
+                            
+                                <div id="msg99" class="message-container" data-class="msg" data-timing="1.56" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Oh.</div></div></div>
+
+                            
+                                <div id="msg100" class="message-container" data-class="msg" data-timing="4.7" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Sherlock.</div></div></div>
+
+                            
+                                <div id="msg102" class="message-container" data-class="msg" data-timing="2.14" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">you arent freaks</div></div></div>
+
+                            
+                                <div id="msg103" class="message-container" data-class="msg" data-timing="3.26" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">why do you stay with one</div></div></div>
+
+                            
+                                <div id="msg105" class="message-container" data-class="msg" data-timing="3.6100000000000003" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Shush. We&#x27;re all freaks, and it&#x27;s all fine.</div></div></div>
+
+                            
+                                <div id="msg106" class="message-container" data-class="msg" data-timing="4.58" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Now tell John what made you cry.</div></div></div>
+
+                            
+                                <div id="msg107" class="message-container" data-class="msg" data-timing="1.49" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Darling?</div></div></div>
+
+                            
+                                <div id="msg108" class="message-container" data-class="msg" data-timing="3.98" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">You still with me?</div></div></div>
+
+                            
+                                <div id="msg110" class="message-container" data-class="msg" data-timing="3.02" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Wow.</div></div></div>
+
+                            
+                                <div id="msg112" class="message-container" data-class="msg" data-timing="1.602957" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Ah.</div></div></div>
+
+                            
+                                <div id="msg113" class="message-container" data-class="msg" data-timing="3.891109" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">So you told him, yeah?</div></div></div>
+
+                            
+                                <div id="msg115" class="message-container" data-class="msg" data-timing="3.335894" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Mmm.</div></div></div>
+
+                            
+                                <div id="msg117" class="message-container" data-class="msg" data-timing="4.559057" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">And he went back to the dance floor, and you followed him?</div></div></div>
+
+                            
+                                <div id="msg119" class="message-container" data-class="msg" data-timing="2.724313" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Yep.</div></div></div>
+
+                            
+                                <div id="msg121" class="message-container" data-class="msg" data-timing="2.835511" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">And he chinned the guy?</div></div></div>
+
+                            
+                                <div id="msg123" class="message-container" data-class="msg" data-timing="3.780681" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Right in the chin.</div></div></div>
+
+                            
+                                <div id="msg125" class="message-container" data-class="msg" data-timing="4.440853" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Exeunt, pursued by a bouncer?</div></div></div>
+
+                            
+                                <div id="msg127" class="message-container" data-class="msg" data-timing="3.985971" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">We skated on the pavement til we found a cab that would take us.</div></div></div>
+
+                            
+                                <div id="msg128" class="message-container" data-class="msg" data-timing="1.85" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">John held my hand.</div></div></div>
+
+                            
+                                <div id="msg129" class="message-container" data-class="msg" data-timing="1.81" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Then he held my arse.</div></div></div>
+
+                            
+                                <div id="msg130" class="message-container" data-class="msg" data-timing="7.58" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Then for reasons completely unrelated to the arse-holding I became Distracted and tripped on my skates and fell.</div></div></div>
+
+                            
+                                <div id="msg131" class="message-container" data-class="msg" data-timing="1.65" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Then John tripped on me.</div></div></div>
+
+                            
+                                <div id="msg132" class="message-container" data-class="msg" data-timing="1.2" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">And fell.</div></div></div>
+
+                            
+                                <div id="msg133" class="message-container" data-class="msg" data-timing="4.65" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">We are on our way home and the cabbie is trying not to ask us about the roller skates.</div></div></div>
+
+                            
+                                <div id="msg134" class="message-container" data-class="msg" data-timing="2.7800000000000002" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">Or the blood.</div></div></div>
+
+                            
+                                <div id="msg136" class="message-container" data-class="msg" data-timing="1.52" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">Oh Lord.</div></div></div>
+
+                            
+                                <div id="msg137" class="message-container" data-class="msg" data-timing="3.1" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">I&#x27;ll get the Bactrim.</div></div></div>
+
+                            
+                                <div id="msg139" class="message-container" data-class="msg" data-timing="1.67" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">That&#x27;s my girl.</div></div></div>
+
+                            
+                                <div id="msg140" class="message-container" data-class="msg" data-timing="2.71" data-type-start="0" data-prompt="" data-user="user0" width="100%"><div class="message-space"><div><span class="username user0">Sherlock</span></div><div class="bpov">See you soon.</div></div></div>
+
+                            
+                                <div id="msg142" class="message-container" data-class="msg" data-timing="3.6399999999999997" data-type-start="0" data-prompt="" data-user="user1" width="100%"><div class="message-space"><div><span class="username user1">Mary</span></div><div class="nonpov">:-*</div></div></div>
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- Add typing indicator -->
+                    <div id="typing">
+                        <span>Typing: </span>
+                        <span id="typers">
+                            
+                            <span id="typer-Sherlock" class="user0 typer">Sherlock </span>
+                            
+                            <span id="typer-Mary" class="user1 typer">Mary </span>
+                            
+                        </span>
+                    </div>
+                    <!-- Add cursor/typing box -->
+                    <div id="prompt-box"><span id="prompt"></span>&nbsp;<span id="typewriter-space"></span><span id="dc-cursor" class="cursor">|</span></div>
+                    <!-- This allows the javascript to display the correct default prompt in the prompt box, but is otherwise hidden/ignored -->
+                    <span id="default-prompt" aria-hidden="true"></span>    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="animation.js"></script>
+</body>
+
+</html>
