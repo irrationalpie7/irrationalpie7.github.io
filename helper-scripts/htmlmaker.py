@@ -2,8 +2,8 @@ from jinja2 import FileSystemLoader, Environment, select_autoescape, StrictUndef
 import json
 import sys
 import html
-SCRIPT_PATH = r'biscuit1-1.txt'
-TEMPLATE_VALUES_PATH = r'biscuitverse6.json'
+SCRIPT_PATH = r'script.txt'
+TEMPLATE_VALUES_PATH = r'template_values.json'
 TEMPLATE_PATH = r'template.html.j2'
 TIMINGS_PATH = r'timings.txt'
 HTML_LINES_PATH = r'index.html'
@@ -220,7 +220,6 @@ typeStartOverride = 0
 sanityCheck = ''
 for i, line in enumerate(scriptlines):
     # undocumented personal override
-    # in chapter 1 there's definitely no implied switching, so we'll ignore that for now.
     if line.startswith("@@"):
         cleanline = line[2:]
         cmd = cleanline.split(":", 1)

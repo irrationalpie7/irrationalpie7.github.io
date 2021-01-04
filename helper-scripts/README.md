@@ -14,27 +14,67 @@ For more details on each step, see below.
 
 There are a few different kinds of lines you can have in `script.txt`:
 
+### Header lines
+
+These lines give `htmlmaker.py` some information to help it interpret your script.
+
+#### Defining the chat windows
+
+Format:
+
+`:create:(window alias):(theme):(point-of-view character):(chat title)
+
+* Window alias: This must be unique. You'll use it later to indicate which chat window message should appear in.
+* Theme: This should be "console" or "texting".
+* Point-of-view character: Whose point of view is this chat window from? We'll see at typing animation for that character's lines, but not for the other characters.
+* Chat title: What should show up at the top of the chat window?
+
+Examples:
+
+* `:create:Sherlock & John:texting:Sherlock:John Watson`
+This creates a chat window with the texting theme. Sherlock is the point of view character, so when Sherlock's lines go in this window we'll see a typing animation. The box at the top of the screen will say "John Watson", so people watching the animation will know that this is their conversation
+* `:create:intro:texting::My Fabulous Work Title`
+This creates a chat window with the texting theme. It has *no* point-of-view character. This could be helpful if you want to have your animation show messages appearing while the header for the story is being read, and no characters have lines yet.
+* `:create:droid chat:console:Kay2:DROIDCHAT v.2.0.16`
+This creates a chat window with the console theme. It has Kay2 as the point-of-view character, and says "DROIDCHAT v.2.0.16" at the top.
+
+#### Defining the characters
+
+Format:
+
+`:characters:name1:name2:name3:name4:...`
+
+Each name must be the name that will be used to reference that character in the script, and it will be shown to users in the animation. The only limiation is that the character name *cannot* contain colons (:).
+
+Example:
+
+* `:characters:Sherlock Holmes:John Watson:Mary Morstan Watson:Molly Hooper`
+This defines the characters Sherlock Holmes, John Watson, Mary Morstan Watson, and Molly Hooper. If you forget a character, or some lines in your script reference a character by just part of their name, e.g. "Sherlock" or "Mary Watson", the animation will not be able to tell who to assign that line to.
+
+
+### Content lines
 * Lines *not* associated with timings:
     * *Character lines.* These are of the form `Character name:` and indicate who the next script line(s) is/are from.
-    * *Focus lines.* These are of the form `:switch:pov character's name:chat title` and indicate which window the next script line(s) should be in. If at that point in the animation, that particular chat window is not visible to the user (see switch and split lines below), the script lines following this focus line will not appear to the user, although the user will see them the next time you switch or split to this chat window.
+    * *Focus lines.* These are of the form `:focus:alias of chat` and indicate which window the next script line(s) should be in. If at that point in the animation, that particular chat window is not visible to the user (see switch and split lines below), the script lines following this focus line will not appear to the user, although the user will see them the next time you switch or split to this chat window.
     * *Blank lines.* These lines are skipped by `htmlmaker.py`.
     * *Comment lines.* These must start with a '#', and allow you to leave notes to yourself in `script.txt`. These lines are skipped by `htmlmaker.py`.
     * *Override type start.* See below under common issues.
 
 * Lines associated with timings:
-    * *Script lines.* These are of the form `Character name: line` or `line`, and will result in a message from `Character name` with the content `line` appearing in the animation. The time associated with a script line indicates how long to wait before showing the next line.
-    * *Switch lines.* These lines switch to a new chat window. They are of the form `:switch:new pov character's name:new chat title`. For example, `:switch:Sherlock:Irregulars` could be used to switch to a group chat named `Irregulars`, where the point-of-view character is Sherlock. This means that we'll see a typing animation when Sherlock sends a message, but not when others in that window do. If you switch back to a chat window after having switched away from it, the message history from the previous time the chat window was shown will be preserved. The time associated with these lines is equivalent to the pause before showing the first new message in this window. Showing an animation of the same chat thread but from different point-of-view characters is not supported at this time. A switch line implies a focus line, so the next script line after it will appear in this particular chat window.
-    * *Split lines.* These lines split the screen horizontally and add or remove the chat specified in the command. They are of the form `:split-add:pov character:chat title` or `:split-remove:pov character:chat title`. After a split line, there must be a focus or switch line before any new script lines so it is not ambiguous which chat window those messages belong to.
+    * *Script lines.* These are of the form `Character name: line` or `line`, and will result in a message from `Character name` with the content `line` appearing in the animation. The time associated with a script line indicates how long to wait before showing the next line. Any script lines that follow but don't specify their own character name will use the same character as on the previous line.
+        * Examples: `Mary: Hi there!` or `Hi there!`
+    * *Switch lines.* These lines switch to a new chat window. They are of the form `:switch:alias of chat`. For example, `:switch:droid chat` could be used to switch to the droid chat we created in the `create` example. If you switch back to a chat window after having switched away from it, the message history from the previous time the chat window was shown will be preserved. The time associated with these lines is equivalent to the pause before showing the first new message in this window. Showing an animation of the same chat thread but from different point-of-view characters is not supported at this time. A switch line implies a focus line, so the next script line after it will appear in this particular chat window.
+    * *Split lines.* These lines split the screen horizontally and add or remove the chat specified in the command. They are of the form `:split-add:alias of chat` or `:split-remove:alias of chat`. After a split line, there must be a focus or switch line before any new script lines so it is not ambiguous which chat window those messages belong to.
 
-The script will automatically remove white-space before or after character's names, and before or after a script line.
+The script will automatically remove white-space before or after the `:` for all of these commands.
 
 `htmlmaker.py` will let you know if it seems ambiguous what chat window a particular script window belongs to (at the beginning of the script or after a split-add or split-remove command) so that you can add the appropriate switch or focus command. In general, you should be good if you:
-* start your script with a switch line
+* put a switch line before the first script line in your script
 * follow any split-add or split-remove lines with a focus line.
 
 ### Fixes for a few common issues:
 
-* If your script line starts with ':' or '#', `htmlmaker.py` will mangle the line unless you make sure to provide a character on that particular line. Example to avoid: `:D`; correct example: `Mary: :D`.
+* If your script line starts with ':' or '#', `htmlmaker.py` will mangle the line unless you make sure to provide a character name on that particular line. Example to avoid: `:D`; correct example: `Mary: :D`.
 * If you have two messages in a row from the point-of-view character and the second is really long, its typing animation may start before the previous message's typing animation finishes, leading to a jumbled mangle of characters in the typing box. There are two potential fixes:
     * Break up the second message into two or more shorter messages.
     * Add a line of the form `:override-type-start:number` right before the second message. You don't need to (/can't) add a timing for this line. This will ignore the first `number` letters in the typing animation, so it can start later and avoid conflicting with the previous script line. Experiment with different number values to see if this helps. Examples where the script line that follows the override line is `Hello beautiful world!`:
@@ -75,7 +115,7 @@ This is one of the more tedious parts of coming up with an animation. Below are 
 
 #### Using labels in Audacity
 1. (optional) Use "Analyze > Silence finder..." to try to find breaks between speaking roles--this adds a bunch of labels with label "S"
-2. Go through and remove extra labels/add missing ones (if you click the label track in audacity, then start playing, you can use alt + left/right arrow to jump to the next/previous label to make this process go faster)
+2. Go through and remove extra labels/add missing ones (you can use alt + left/right arrow to jump to the next/previous label to make this process go faster)
 3. Export the label track and copy the result to a spreadsheet
 4. Add a column to the spreadsheet that calculates the difference between consecutive label start times, then copy that column to the timing file.
     * If you go this route, it may be easier to leave notes to yourself in the spreadsheet, rather than putting them directly in timings.txt
@@ -101,16 +141,11 @@ The json format is pretty strict, so there are a few ways you might trip up.
 
 Depending on your operating system, the way you install and use python and pip will vary, so go look that up first if you don't have them. Note that this script uses Python 3, not Python 2. It also depends on jinja2, which can be installed with pip.
 
-The current version of the script requires you to specify whether you're creating an animation with a "console" or "texting" theme, then provide the character names as arguments to this script.
 Usage:
 ```
-python3 htmlmaker.py "texting|console" "Character 1 name" "Character 2 name" "Character N name"
-```
-Example:
-```
-python3 htmlmaker.py "texting" "Sherlock" "Mary"
+python3 htmlmaker.py
 ```
 
-The script requires that the three other files are in the same folder. It will print out some sanity-check lines in the console so you can confirm whether the script lines and timing lines are lining up correctly. It will also generate an `index.html` file.
+The `htmlmaker.py` requires that the three other files are in the same folder. It will print out some sanity-check lines in the console so you can confirm whether the script lines and timing lines are lining up correctly. It will also generate an `index.html` file.
 
 To see the animation, put `index.html` in the same folder as `animation.js` and `animation.css`, then open it in your browser and enjoy!
