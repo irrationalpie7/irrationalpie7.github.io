@@ -1,4 +1,4 @@
-# Developing your own animation
+# Developing your own podfic animation
 
 To develop your own animation, you'll need to do a few things:
 1. Create a transcript file (`script.txt`) to indicate which characters say what lines. There are also a few commands you can include in this file to influence how these lines appear.
