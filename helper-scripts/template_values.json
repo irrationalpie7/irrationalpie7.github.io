@@ -1,0 +1,61 @@
+{
+    "__COMMENT_0__": "This is full of example values at the moment.",
+    "__COMMENT_1__": "Fill in your own values on the right for each of the items on the left",
+    "title": "Title",
+    "long_title": "Long title",
+    "__COMMENT_2__": "Attributions for authors, podficcers, and animators are each stored in lists which can contain one or more contributors.",
+    "__COMMENT_3__": "Please credit all contributors, in all categories to which they contributed.",
+    "authors": [
+        {
+            "name": "pseud",
+            "link": "ao3 link to pseud (see example below)"
+        },
+        {
+            "name": "Litra",
+            "link": "https://archiveofourown.org/users/litra/pseuds/litra"
+        },
+        {
+            "name": "if there's only one author, delete additional entries",
+            "link": "see the 'animators' list for an example with a single contributor"
+        }
+    ],
+    "podficcers": [
+        {
+            "name": "pseud",
+            "link": "ao3 link to pseud"
+        },
+        {
+            "name": "If you need to add more entries,",
+            "link": "don't forget to add commas!"
+        }
+    ],
+    "animators": [
+        {
+            "name": "pseud",
+            "link": "ao3 link to pseud"
+        }
+    ],
+    "__COMMENT_4__": "Erase everything *between* the [ and ] that follow 'musics' if you didn't use music.",
+    "musics": [
+        {
+            "name": "Piece name (see example below)",
+            "artist": "Artist name",
+            "link": "link to the music",
+            "license_link": "This link is optional"
+        },
+        {
+            "name": "Hiding Your Reality",
+            "artist": "Kevin MacLeod",
+            "link": "https://incompetech.filmmusic.io/song/3875-hiding-your-reality",
+            "license_link": "http://creativecommons.org/licenses/by/4.0/"
+        }
+    ],
+    "__COMMENT_5__": "The official links for the various formats of this work.",
+    "source_links": {
+        "text": "link to ao3 work",
+        "audio": "link to ao3 work",
+        "animation": "link to ao3 work"
+    },
+    "__COMMENT_6__": "'hosted_audio_link' should be the link your audio is hosted at. It must be in mp3 format.",
+    "hosted_audio_link": "https://hostwebsite.com/yourmp3.mp3"
+}
