@@ -8,6 +8,10 @@ TEMPLATE_PATH = r'template.html.j2'
 TIMINGS_PATH = r'timings.txt'
 HTML_LINES_PATH = r'index.html'
 
+verbose = False
+if len(sys.argv) > 1:
+    verbose = True
+
 
 # Keep track of characters in the animation.
 userToId = {"": ""}
@@ -271,7 +275,7 @@ for i, line in enumerate(scriptlines):
     messages[msg["metadata"]["windowId"]].append(msg)
 
     # Record some lines as a sanity spot-check
-    if timingIndex < 5 or timingIndex % (len(timinglines)//10) == 0:
+    if verbose or timingIndex < 5 or timingIndex % (len(timinglines)//10) == 0:
         sanityCheck = f'{sanityCheck}\n{printMessage(msg)}'
 
 # It was convenient to have an empty user before, but now we want it gone.

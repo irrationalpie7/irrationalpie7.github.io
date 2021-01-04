@@ -22,7 +22,7 @@ These lines give `htmlmaker.py` some information to help it interpret your scrip
 
 Format:
 
-`:create:(window alias):(theme):(point-of-view character):(chat title)
+`:create:(window alias):(theme):(point-of-view character):(chat title)`
 
 * Window alias: This must be unique. You'll use it later to indicate which chat window message should appear in.
 * Theme: This should be "console" or "texting".
@@ -44,7 +44,7 @@ Format:
 
 `:characters:name1:name2:name3:name4:...`
 
-Each name must be the name that will be used to reference that character in the script, and it will be shown to users in the animation. The only limiation is that the character name *cannot* contain colons (:).
+Each name must be the name that will be used to reference that character in the script, and it will be shown to users in the animation. The only limitation is that the character name *cannot* contain colons (:).
 
 Example:
 
@@ -66,10 +66,10 @@ This defines the characters Sherlock Holmes, John Watson, Mary Morstan Watson, a
     * *Switch lines.* These lines switch to a new chat window. They are of the form `:switch:alias of chat`. For example, `:switch:droid chat` could be used to switch to the droid chat we created in the `create` example. If you switch back to a chat window after having switched away from it, the message history from the previous time the chat window was shown will be preserved. The time associated with these lines is equivalent to the pause before showing the first new message in this window. Showing an animation of the same chat thread but from different point-of-view characters is not supported at this time. A switch line implies a focus line, so the next script line after it will appear in this particular chat window.
     * *Split lines.* These lines split the screen horizontally and add or remove the chat specified in the command. They are of the form `:split-add:alias of chat` or `:split-remove:alias of chat`. After a split line, there must be a focus or switch line before any new script lines so it is not ambiguous which chat window those messages belong to.
 
-The script will automatically remove white-space before or after the `:` for all of these commands.
+The script will automatically remove white-space before or after the colon (:) for all of these commands.
 
 `htmlmaker.py` will let you know if it seems ambiguous what chat window a particular script window belongs to (at the beginning of the script or after a split-add or split-remove command) so that you can add the appropriate switch or focus command. In general, you should be good if you:
-* put a switch line before the first script line in your script
+* put a switch line before the first "spoken" line in your script
 * follow any split-add or split-remove lines with a focus line.
 
 ### Fixes for a few common issues:
@@ -87,6 +87,8 @@ The script will automatically remove white-space before or after the `:` for all
 ## The timings file (`timings.txt`)
 
 Each line of `timings.txt` corresponds to a time in decimal seconds. For a script line, this will correspond to how long it takes to say this line in the audio. Any lines that are not a number will be ignored. You can take advantage of this to make notes to yourself about which script lines the various timing lines correspond to, which can be useful to try to figure out where you accidentally merged two times that should be separate or split two times that should correspond to the same line.
+
+When lining `script.txt` up with `timings.txt`, `htmlmaker.py` will essentially figure out which lines of the script need timing information and which lines of the timing file have valid lines on them, and then match the values up in the order they appear. To help you make sure this is the order you intended, `htmlmaker.py` will print out some of these matchings to help you spot-check that these line up.
 
 ### Aesthetic note
 Imagine you have the following script:
@@ -146,6 +148,12 @@ Usage:
 python3 htmlmaker.py
 ```
 
-The `htmlmaker.py` requires that the three other files are in the same folder. It will print out some sanity-check lines in the console so you can confirm whether the script lines and timing lines are lining up correctly. It will also generate an `index.html` file.
+`htmlmaker.py` requires that `script.txt`, `timings.txt`, and `template_values.json` are in the same folder when you run it. It will print out some sanity-check lines in the console so you can confirm whether the script lines and timing lines are lining up correctly. It will also generate an `index.html` file.
+
+If you'd like to print information about *all* the script/timing lines, you can do the following instead:
+```
+python3 htmlmaker.py verbose > matchup.txt
+```
+Now you can look in `matchup.txt` for the particular line you're having an issue with to diagnose your problem and make the appropriate changes to `timings.txt` or `script.txt`.
 
 To see the animation, put `index.html` in the same folder as `animation.js` and `animation.css`, then open it in your browser and enjoy!
