@@ -1,3 +1,4 @@
+(() => {
 // typing params
 const TYPE_SPEED = 5;
 const SEND_DELAY = 500;
@@ -290,3 +291,4 @@ document.getElementById("lightdark-btn").addEventListener("click", () => {
 
 makeTimings()
 makeAccordians()
+})();
