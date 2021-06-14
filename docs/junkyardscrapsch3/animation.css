@@ -1,0 +1,377 @@
+html, 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 99%;
+    font-family: sans-serif;
+}
+
+body.darkmode {
+    background: #222;
+    color: lightgrey;
+}
+
+.darkmode
+a:link {
+    color: lightblue;
+}
+
+.darkmode
+a:visited {
+    color: plum;
+}
+
+#top-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#viewport {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation-window {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0.5em;
+    flex-grow: 1;
+    border: solid lightgrey;
+}
+
+.nbsp{
+    white-space: pre;
+    margin: 0;
+}
+
+.animation-window/*.texting-theme*/ {
+    max-width: 400px;
+}
+
+.console-theme{
+    font-family: monospace;
+}
+
+.texting-theme{
+    font-family: sans-serif;
+}
+
+.darkmode
+.animation-window{
+    background: #222
+}
+
+.darkmode
+.console-theme.animation-window {
+    color: lime;
+}
+
+.darkmode
+.texting-theme.animation-window {
+    color: lightgrey;
+}
+
+.app-container {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.5em;
+}
+
+#credits{
+    height: 100%;
+}
+
+.texting-theme
+#credits{
+    align-items: center;
+}
+
+.app-container#credits {
+    justify-content: center;
+}
+
+.app-container.visible {
+    display: flex;
+}
+
+.chatbox-container {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+}
+
+.chatbox {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.message-space {
+    width: 100%;
+}
+
+.message-container {
+    display: none;
+    flex-direction: row;
+}
+
+.message-container.visible {
+    display: flex;
+}
+
+.chat-title{
+    width: 100%;
+    /* top | horizontal | bottom */
+    margin: 0 0 0.5em; /*
+    padding: 0.5em 1em; */
+    box-sizing: border-box;
+}
+
+.texting-theme
+.chat-title{
+    /* vertical | horizontal */
+    padding: 1.5em 1em;
+    border: solid lightgrey;
+    margin: 0 0 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Characters */
+.username {
+    font-weight: bold;
+}
+
+.darkmode
+.user6 {
+    color: skyblue;
+}
+
+.user6 {
+    color: blue;
+}
+
+.user5 {
+    color: red;
+}
+
+.darkmode
+.user4 {
+    color: lightgrey;
+}
+
+.user4 {
+    color: grey;
+}
+
+.darkmode
+.user2,
+.darkmode
+.user3 {
+    color: gold;
+}
+
+.user2,
+.user3 {
+    color: orange;
+}
+
+.darkmode
+.user1 {
+    color: lightgreen;
+}
+
+.user1 {
+    color: green;
+}
+
+.darkmode
+.user0 {
+    color: plum;
+}
+
+.user0 {
+    color: magenta;
+}
+
+.typing {
+    display: none;
+    font-style: italic;
+}
+
+.typing.visible {
+    display: block;
+}
+
+.typer {
+    display: none;
+}
+
+.typer.visible {
+    display: inline;
+}
+
+/* Blinking cursor */
+.cursor {
+    -webkit-animation: blink 0.8s infinite;
+    animation: blink 0.8s infinite;
+}
+
+@-webkit-keyframes blink {
+    0% {opacity: 0;}
+    50% {opacity: 100;}
+    100% {opacity: 0;}
+}
+
+@keyframes blink {
+    0% {opacity: 0;}
+    50% {opacity: 100;}
+    100% {opacity: 0;}
+}
+
+/* Accordian menu */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    padding: 1em;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: inherit;
+    transition: 0.4s;
+}
+
+.darkmode
+.accordion {
+    background-color: rgb(53, 53, 53);
+    color: lightgrey;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.darkmode
+.active, .accordion:hover {
+    background-color: rgb(122, 122, 122);
+}
+
+.accordion:before {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: left;
+    margin-right: 0.5em;
+}
+
+.darkmode
+.accordion:before {
+    color: lightgrey;
+}
+
+.active:before {
+    content: "\2212";
+}
+
+.panel {
+    font-size: inherit;
+    padding: 0 1em 1em 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Dark mode toggle */
+#lightdark-btn {
+    background-color: #eee;
+    color: #444;
+    padding: 1em;
+    border: none;
+}
+
+.darkmode
+#lightdark-btn {
+    background-color: rgb(53, 53, 53);
+    color: lightgrey;
+}
+
+.hidden {
+    display: none;
+}
+
+/* This is for a gray texting bubble that shows from the left. */
+.texting-theme
+.nonpov {
+    float: left;
+    color: #000000;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: #e5e5ea;
+    max-width: 75%;
+    clear: both;
+    position: relative;
+}
+.texting-theme
+.nonpov::after {
+    content: "";
+    position: absolute;
+    left: -.5em;
+    bottom: 0;
+    width: 0.5em;
+    height: 1em;
+    border-right: 0.5em solid #e5e5ea;
+    border-bottom-right-radius: 1em 0.5em;
+}
+
+/* A blue reply bubble, showing from the right */
+.texting-theme
+.pov {
+    float: right;
+    color: #FFFFFF;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: #1289fe;
+    max-width: 75%;
+    clear: both;
+    position: relative;
+}
+.texting-theme
+.pov::after {
+    content: "";
+    position: absolute;
+    right: -0.5em;
+    bottom: 0;
+    width: 0.5em;
+    height: 1em;
+    border-left: 0.5em solid #1289fe;
+    border-bottom-left-radius: 1em 0.5em;
+}
+
+.texting-theme
+.message-space
+.povuser {
+    float: right;
+}
+
+.texting-theme
+.prompt-box {
+    float: left;
+    color: #000000;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: #e5e5ea;
+    justify-content: top;
+    clear: both;
+    position: relative;
+}
