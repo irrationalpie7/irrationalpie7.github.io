@@ -1,4 +1,4 @@
-html, 
+html,
 body {
     display: flex;
     flex-direction: column;
@@ -11,13 +11,11 @@ body.darkmode {
     color: lightgrey;
 }
 
-.darkmode
-a:link {
+.darkmode a:link {
     color: lightblue;
 }
 
-.darkmode
-a:visited {
+.darkmode a:visited {
     color: plum;
 }
 
@@ -43,30 +41,35 @@ a:visited {
     border: solid lightgrey;
 }
 
-.animation-window.texting-theme {
+.nbsp {
+    white-space: pre;
+    margin: 0;
+}
+
+.animation-window
+
+/*.texting-theme*/
+    {
     max-width: 400px;
 }
 
-.console-theme{
+.console-theme {
     font-family: monospace;
 }
 
-.texting-theme{
+.texting-theme {
     font-family: sans-serif;
 }
 
-.darkmode
-.animation-window{
+.darkmode .animation-window {
     background: #222
 }
 
-.darkmode
-.console-theme.animation-window {
+.darkmode .console-theme.animation-window {
     color: lime;
 }
 
-.darkmode
-.texting-theme.animation-window {
+.darkmode .texting-theme.animation-window {
     color: lightgrey;
 }
 
@@ -77,12 +80,11 @@ a:visited {
     padding: 0.5em;
 }
 
-#credits{
+#credits {
     height: 100%;
 }
 
-.texting-theme
-#credits{
+.texting-theme #credits {
     align-items: center;
 }
 
@@ -121,16 +123,16 @@ a:visited {
     display: flex;
 }
 
-.chat-title{
+.chat-title {
     width: 100%;
     /* top | horizontal | bottom */
-    margin: 0 0 0.5em; /*
+    margin: 0 0 0.5em;
+    /*
     padding: 0.5em 1em; */
     box-sizing: border-box;
 }
 
-.texting-theme
-.chat-title{
+.texting-theme .chat-title {
     /* vertical | horizontal */
     padding: 1.5em 1em;
     border: solid lightgrey;
@@ -144,21 +146,7 @@ a:visited {
     font-weight: bold;
 }
 
-.user5 {
-    color: red;
-}
-
-.darkmode
-.user4 {
-    color: lightgrey;
-}
-
-.user4 {
-    color: grey;
-}
-
-.darkmode
-.user3 {
+.darkmode .user3 {
     color: skyblue;
 }
 
@@ -166,8 +154,19 @@ a:visited {
     color: blue;
 }
 
-.darkmode
-.user2 {
+.user5 {
+    color: red;
+}
+
+.darkmode .user4 {
+    color: lightgrey;
+}
+
+.user4 {
+    color: grey;
+}
+
+.darkmode .user2 {
     color: gold;
 }
 
@@ -175,8 +174,7 @@ a:visited {
     color: orange;
 }
 
-.darkmode
-.user1 {
+.darkmode .user1 {
     color: lightgreen;
 }
 
@@ -184,8 +182,7 @@ a:visited {
     color: green;
 }
 
-.darkmode
-.user0 {
+.darkmode .user0 {
     color: plum;
 }
 
@@ -217,15 +214,31 @@ a:visited {
 }
 
 @-webkit-keyframes blink {
-    0% {opacity: 0;}
-    50% {opacity: 100;}
-    100% {opacity: 0;}
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes blink {
-    0% {opacity: 0;}
-    50% {opacity: 100;}
-    100% {opacity: 0;}
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Accordian menu */
@@ -241,18 +254,18 @@ a:visited {
     transition: 0.4s;
 }
 
-.darkmode
-.accordion {
+.darkmode .accordion {
     background-color: rgb(53, 53, 53);
     color: lightgrey;
 }
 
-.active, .accordion:hover {
+.active,
+.accordion:hover {
     background-color: #ccc;
 }
 
-.darkmode
-.active, .accordion:hover {
+.darkmode .active,
+.accordion:hover {
     background-color: rgb(122, 122, 122);
 }
 
@@ -264,8 +277,7 @@ a:visited {
     margin-right: 0.5em;
 }
 
-.darkmode
-.accordion:before {
+.darkmode .accordion:before {
     color: lightgrey;
 }
 
@@ -289,8 +301,7 @@ a:visited {
     border: none;
 }
 
-.darkmode
-#lightdark-btn {
+.darkmode #lightdark-btn {
     background-color: rgb(53, 53, 53);
     color: lightgrey;
 }
@@ -300,8 +311,7 @@ a:visited {
 }
 
 /* This is for a gray texting bubble that shows from the left. */
-.texting-theme
-.nonpov {
+.texting-theme .nonpov {
     float: left;
     color: #000000;
     margin: 0 0 0.5em;
@@ -312,8 +322,8 @@ a:visited {
     clear: both;
     position: relative;
 }
-.texting-theme
-.nonpov::after {
+
+.texting-theme .nonpov::after {
     content: "";
     position: absolute;
     left: -.5em;
@@ -325,8 +335,7 @@ a:visited {
 }
 
 /* A blue reply bubble, showing from the right */
-.texting-theme
-.pov {
+.texting-theme .pov {
     float: right;
     color: #FFFFFF;
     margin: 0 0 0.5em;
@@ -337,8 +346,8 @@ a:visited {
     clear: both;
     position: relative;
 }
-.texting-theme
-.pov::after {
+
+.texting-theme .pov::after {
     content: "";
     position: absolute;
     right: -0.5em;
@@ -349,14 +358,11 @@ a:visited {
     border-bottom-left-radius: 1em 0.5em;
 }
 
-.texting-theme
-.message-space
-.povuser {
+.texting-theme .message-space .povuser {
     float: right;
 }
 
-.texting-theme
-.prompt-box {
+.texting-theme .prompt-box {
     float: left;
     color: #000000;
     margin: 0 0 0.5em;

@@ -125,8 +125,8 @@
             </div>
 
             <!-- div containing the entire app -->
-            <div id="animation-window" class="animation-window {{theme}}-theme">
-                <div class="app-container" id="credits">
+            <div id="animation-window" class="animation-window ">
+                <div class="app-container {{theme}}-theme " id="credits">
                     <div class="nonpov">
                         [INFO] Click play to start the animation.<br>
                         &gt;&gt;<br>
@@ -135,7 +135,7 @@
                 </div>
 
                 {% for windowId, messageList in messages.items(): %}
-                <div class="app-container chat-window" id="{{windowId}}" data-theme="{{theme}}">
+                <div class="app-container chat-window {{themes[windowId]}}-theme" id="{{windowId}}" data-theme="{{themes[windowId]}}">
                     <div id="chat-title-{{windowId}}" class="chat-title">{{chat_titles[windowId]}}</div>
 
                     <!-- div containing DroidChat -->
@@ -151,7 +151,7 @@
                                     <div>
                                         <span class="username {{msg.userinfo.id}} {{msg.userinfo.type}}user">{{msg.userinfo.name}}</span>
                                     </div>
-                                    <div class="{{msg.userinfo.type}}">{{msg["content"]}}</div>
+                                    <div class="{{msg.userinfo.type}}{{msg.nbsp}}">{{msg["content"]}}</div>
                                 </div>
                             </div>
                             {% endfor %}

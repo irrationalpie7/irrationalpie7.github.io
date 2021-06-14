@@ -24,7 +24,7 @@ def getOrCreateUserId(userName):
     userId = userToId.get(userName)
     if not userId:
         nextUserNumber = len(userToId)
-        userToId[userName] = f'user{nextUserNumber}'
+        userToId[userName] = f'user{nextUserNumber-1}'
     return userToId[userName]
 
 
@@ -94,7 +94,7 @@ def parseLine(line, i, prevUserName, prevWindowId, typeStartOverride):
            "id": f'msg{i:05d}',
            "userinfo": {"id": "", "name": "", "type": "nonpov"},
            "metadata": {"timing": "", "typeStart": typeStartOverride, "windowId": prevWindowId},
-           "content": ""}
+           "content": "", "nbsp": ""}
     cleanline = line.strip()
 
     # Ignore lines with only whitespace, or that start with '#'
@@ -145,23 +145,30 @@ def parseLine(line, i, prevUserName, prevWindowId, typeStartOverride):
             for name in names:
                 getOrCreateUserId(name)
             return msg
-        elif len(cleanline) < 1:
-            # this allows you to include a line for timing purposes
-            # without showing anything in the animation
-            msg["type"] = 'ignore'
+        elif cmdName == "nbsp":
+            result = line.split(":", 2)
+            msg["type"] = "nbsp"
+            cleanline = result[2]
         else:
             # false alarm, this wasn't actually a command
             cleanline = f':{cleanline}'
 
-    # process regular message line
-    msg["type"] = 'msg'
+    nbsp = False
+    if msg["type"] == "nbsp":
+        nbsp = True
+    else:
+        # process regular message line
+        msg["type"] = 'msg'
     potentialsplit = cleanline.split(':', 1)
+
     # if the first part of this line is a known user, update that info
     # otherwise, keep using the previously specified user.
-    if userToId.get(potentialsplit[0].strip()):
+    if len(potentialsplit) > 1 and (userToId.get(potentialsplit[0].strip()) or potentialsplit[0].strip() == ""):
         msg["userinfo"]["id"] = userToId[potentialsplit[0].strip()]
         msg["userinfo"]["name"] = potentialsplit[0].strip()
-        msg["content"] = potentialsplit[1].strip()
+        msg["content"] = potentialsplit[1]
+        if not nbsp:
+            msg["content"] = msg["content"].strip()
         # if there's actually no message on this line, skip it
         if msg["content"] == '':
             msg["type"] = "character"
@@ -171,6 +178,7 @@ def parseLine(line, i, prevUserName, prevWindowId, typeStartOverride):
         msg["userinfo"]["name"] = prevUserName
         msg["content"] = cleanline
 
+    # override type start if it would be too long
     if len(msg["content"]) < msg["metadata"]["typeStart"]:
         msg["metadata"]["typeStart"] = len(msg["content"])
 
@@ -254,7 +262,7 @@ for i, line in enumerate(scriptlines):
 
     if msg["type"] == "switch":
         curWindowId = msg["metadata"]["windowId"]
-    if msg["type"] == "msg":
+    if msg["type"] == "msg" or msg["type"] == "nbsp":
         curUser = msg["userinfo"]["name"]
         # Clear this out so the next message starts back at default
         typeStartOverride = 0
@@ -268,6 +276,10 @@ for i, line in enumerate(scriptlines):
 
     # Add this message to its chat window:
     msg["content"] = html.escape(msg["content"]).replace('  ', '&nbsp;&nbsp;')
+    if msg["type"] == "nbsp":
+        msg["content"] = msg["content"].replace(' ', '&nbsp;')
+        msg["type"] = "msg"
+        msg["nbsp"] = " nbsp"
     msg["userinfo"]["name"] = html.escape(
         msg["userinfo"]["name"]).replace('  ', '&nbsp;&nbsp;')
     msg["metadata"]["timing"] = timinglines[timingIndex]
@@ -302,7 +314,7 @@ template = env.get_template(TEMPLATE_PATH)
 output = template.render(template_values=template_values, users=userToId,
                          chat_titles=windowIdToTitle, messages=messages,
                          prompt=promptdivs, default_prompt=default_prompt, cursor="",
-                         theme=windowIdToTheme["window0"])
+                         theme=windowIdToTheme["window0"], themes=windowIdToTheme)
 
 with open(HTML_LINES_PATH, 'w+') as fh:
     fh.write(output)

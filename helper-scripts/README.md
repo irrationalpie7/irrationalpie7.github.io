@@ -124,8 +124,17 @@ This is one of the more tedious parts of coming up with an animation. Below are 
 
 #### Using splits in Audacity
 
-1. Cut up the audio using ctrl+i, so that each segment represents a script or switch line. (You can also turn labels into cut segments by selecting the audio track and the label track, then doing "Edit > Clip boundaries > Split", but unfortunately I haven't been able to figure out a way to go from split audio to labels)
-1. Double click to select each segment and read the length of the segment from the numbers at the bottom of the screen, adding them to timings.txt
+Assuming all your audio is in the same track, and there are no empty spaces in your audio:
+
+1. Cut up the audio using ctrl+i, so that each segment represents a script or switch line. (You can also turn labels into cut segments by selecting the audio track and the label track, then doing "Edit > Clip boundaries > Split", but I haven't been able to figure out a way to go from split audio to labels)
+1. Go into the "View" menu and make sure "Extra Menus (on/off)" is on.
+1. Go into "Extra menu > Scriptables II > GetInfo"
+1. Set "Type" = "Clips" and "Format = JSON", then hit "OK"
+1. You'll see track #, start, end time, and color for each segment--make a spreadsheet and set those as the headers for the first four columns (you could just skip the previous step, but I'm not sure if that order ever changes, so best to be safe)
+1. "GetInfo" again but set "Format = Brief" this time.
+1. Copy those values into a spreadsheet and tell it to split each row into different columns using the space as a separator (in google sheets, you can do that by pasting, then clicking "split text into columns" when the little paste helper pops up, and then a drop down with "separator:" will pop up and you can pick "space")
+1. Add a new column that subtracts the start times from the end times. Paste that new column into timings.txt
+1. When double-checking that clips are aligned correctly with their times, you can double-click to select a segment in audacity and read the length of the segment from the numbers at the bottom of the screen, then look for a line with that length in the spreadsheet. If you add some notes like that to your timing spreadsheet, it'll help you track down mis-aligned lines.
 
 ## The metadata file (`template_values.json`)
 
